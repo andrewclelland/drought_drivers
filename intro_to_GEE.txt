@@ -12,7 +12,7 @@ Earth Engine is a pain to use at first, the logic is rubbish and the computing m
 
 4. Install the Google Cloud CLI on the Imperial HPC in the root folder where you run code from: https://docs.cloud.google.com/sdk/docs/install-sdk . This allows for easy transfer between Earth Engine and local devices (and vice versa) and should be called once (at the start) of each downloading session using ./google-cloud-sdk/bin/gcloud init . Not necessary to call it if you're working with online-only files.
 
-5. On your Imperial machine run pip install earthengine-api and pip install geemap . These are the two modules which will run Earth Engine on any machine. geemap is the same map engine as with the JavaScript asset editor. 
+5. On your Imperial machine run pip install earthengine-api and pip install geemap . These are the two modules which will run Earth Engine on any machine. geemap is the same map engine as with the JavaScript asset editor. I make most of my files in .py or .ipynb format using Jupyter, but works the same in VSCode. Google Colab is also useful to bear in mind as it's Google's own Notebook system, and sometimes geemap can go a bit funny in Jupyter.
 
 6. Each time you run a Python script/Jupyter Notebook you will have to log in to ee, authenticate and initialise. Once a week it will make you log in to the linked email, ask you to re-accept permissions and get a security code. It's a pain but straightforward (just follow the instructions) and only takes about 30 seconds. The code you need to have at the start of each script is:
 import ee
