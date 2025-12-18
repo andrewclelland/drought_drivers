@@ -1,0 +1,22 @@
+"""
+This .txt file will serve as an intro to GEE, written by AC.
+
+Earth Engine is a pain to use at first, the logic is rubbish and the computing memory within it is severely limited. But once you get used to it it's actually super useful and you can do so much with it.
+"""
+
+1. Create an account on Earth Engine, this can be using a personal or work email. https://earthengine.google.com/signup/ . For any help see this page: https://courses.spatialthoughts.com/gee-sign-up.html . I use my personal email just because of the opportunity to link with Google Drive, but I barely ever use the Google Drive with GEE so you won't be missing out.
+
+2. Once you sign up you will be asked to link your account to a cloud project. Since you're not linked to a GEE group project, just enter a name which will be used across all the different things you do in GEE. e.g. ee-oatkins24
+
+3. Check out https://code.earthengine.google.com/ . The info about your account should appear in the top right corner. This website will be really useful when you work with GEE. It will contain all your stored assets (e.g. shapefiles, images, ImageCollections, grids) not just saved from within GEE but those which you've uploaded from local storage. The editor is JavaScript only but it makes for really quick and easy visualisation of assets. I use 'legacy assets' as opposed to 'cloud assets' for storing my files, but this is personal preference. Each area allows up to 250GB and 50k assets to be stored.
+
+4. Install the Google Cloud CLI on the Imperial HPC in the root folder where you run code from: https://docs.cloud.google.com/sdk/docs/install-sdk . This allows for easy transfer between Earth Engine and local devices (and vice versa) and should be called once (at the start) of each downloading session using ./google-cloud-sdk/bin/gcloud init . Not necessary to call it if you're working with online-only files.
+
+5. On your Imperial machine run pip install earthengine-api and pip install geemap . These are the two modules which will run Earth Engine on any machine. geemap is the same map engine as with the JavaScript asset editor. 
+
+6. Each time you run a Python script/Jupyter Notebook you will have to log in to ee, authenticate and initialise. Once a week it will make you log in to the linked email, ask you to re-accept permissions and get a security code. It's a pain but straightforward (just follow the instructions) and only takes about 30 seconds. The code you need to have at the start of each script is:
+import ee
+ee.Authenticate()
+ee.Initialize(project='ee-oatkins24') # <-- change project name as required
+
+7. That's all the preliminary stuff - go have a play! I have lots of code for doing different things - e.g. deriving NDVI from satellite images, viewing burned area products, so just ask if you want a hand. Check out the GEE data catalog (it has a massive bank which is free to use, process and download) here: https://developers.google.com/earth-engine/datasets/catalog , and the GEE community catalog (unofficial but it's all uploaded and free to use etc): https://gee-community-catalog.org/ . I have been in contact with Samapriya (the guy who runs it) a few times and he's really helpful if there's anything that needs fixing.
